@@ -5,14 +5,18 @@ window.getAnswerMsg = getAnswerMsg;
 const guessWrapper = document.getElementById("guess-wrapper");
 const answerWrapper = document.getElementById("answer-wrapper");
 
+const userInputBox = document.createElement("div");
+userInputBox.className = "user-input-wrapper";
+
 const guessInput = document.createElement("input");
 guessInput.placeholder = "enter a number";
 guessInput.type = "number";
 
 const guessBtn = document.createElement("button");
-guessBtn.innerText = "I think it is this one!";
+guessBtn.innerText = "Guess!";
 
-guessWrapper.append(guessInput, guessBtn);
+userInputBox.append(guessInput, guessBtn);
+guessWrapper.appendChild(userInputBox);
 
 guessBtn.addEventListener("click", () => {
   answerWrapper.innerHTML = "";
@@ -20,10 +24,9 @@ guessBtn.addEventListener("click", () => {
   const userGuess = guessInput.value;
   const userSetting = findSelectedInput();
 
-  console.log(userGuess, userSetting);
-
   if (userGuess && userSetting) {
     const showAnswer = getAnswerMsg(userGuess, userSetting);
+    showAnswer.className = "answerBox";
     answerWrapper.appendChild(showAnswer);
 
     setTimeout(() => {
@@ -40,7 +43,6 @@ function findSelectedInput() {
   const selectedInput = document.querySelector('input[type="radio"]:checked');
 
   if (selectedInput) {
-    console.log(selectedInput.value);
     return selectedInput.value;
   } else {
     console.log("No input");
