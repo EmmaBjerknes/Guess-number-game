@@ -12,7 +12,22 @@
       <h1>Care to take a stab at my mysterious number?</h1>
     </header>
     <main id="main-wrapper">
-      <div id="guess-wrapper"></div>
+      <div id="guess-wrapper">
+        <div id="settings-wrapper">
+          <fieldset>
+            <legend>Level of challenge</legend>
+
+            <input type="radio" name="option" id="opt1" value="3" />
+            <label for="opt1">Piece of cake</label>
+
+            <input type="radio" name="option" id="opt2" value="3" />
+            <label for="opt2">Twisty maze</label>
+
+            <input type="radio" name="option" id="opt3" value="3" />
+            <label for="opt3">Mind-boggling riddle</label>
+          </fieldset>
+        </div>
+      </div>
       <div id="answer-wrapper"></div>
     </main>
     <script src="main.js"></script>

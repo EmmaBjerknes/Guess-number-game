@@ -1,1 +1,1 @@
-console.log("Herp");
+console.log("Herp"),document.getElementById("guess-wrapper"),document.getElementById("settings-wrapper");
