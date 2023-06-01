@@ -3,10 +3,22 @@ body {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  width: fit-content;
+  width: 650px;
   margin: 30px auto;
   border: 1px solid black;
   padding: 30px;
+}
+
+#rules-wrapper {
+  width: fit-content;
+  margin: 0 auto;
+  border: dotted red 2px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+#rules-wrapper li {
+  list-style: none;
 }
 
 #guess-wrapper {
