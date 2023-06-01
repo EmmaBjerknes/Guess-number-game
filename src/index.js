@@ -6,6 +6,7 @@ const guessWrapper = document.getElementById("guess-wrapper");
 const answerWrapper = document.getElementById("answer-wrapper");
 
 const guessInput = document.createElement("input");
+guessInput.placeholder = "enter a number";
 guessInput.type = "number";
 
 const guessBtn = document.createElement("button");
@@ -17,18 +18,24 @@ guessBtn.addEventListener("click", () => {
   answerWrapper.innerHTML = "";
 
   const userGuess = guessInput.value;
+  const userSetting = findSelectedInput();
 
-  if (userGuess) {
-    const showAnswer = getAnswerMsg(userGuess);
+  console.log(userGuess, userSetting);
+
+  if (userGuess && userSetting) {
+    const showAnswer = getAnswerMsg(userGuess, userSetting);
     answerWrapper.appendChild(showAnswer);
 
     setTimeout(() => {
       answerWrapper.removeChild(showAnswer);
     }, 2000);
+  } else {
+    alert("Please enter Level of challenge and your guess");
   }
+
+  guessInput.value = "";
 });
 
-// mock up for setting difficulty lvl later on
 function findSelectedInput() {
   const selectedInput = document.querySelector('input[type="radio"]:checked');
 
