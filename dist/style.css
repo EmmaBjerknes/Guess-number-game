@@ -5,7 +5,6 @@ body {
   flex-direction: column;
   width: 650px;
   margin: 30px auto;
-  border: 1px solid black;
   padding: 30px;
 }
 
